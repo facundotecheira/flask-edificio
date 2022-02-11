@@ -1,0 +1,105 @@
+{% extends 'layout_admin.html' %}
+{% block body %}
+    
+    <div class="container mt-4">
+
+        <div class="row">
+    
+            <div class="col-md-3">
+                
+                
+            </div>
+    
+            <div class="col-md-5">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                  
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+            
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <div class="card card-body">
+                    <div class="card text-center mb-3">
+                        <h5 class="card-header">Cargar boletas de inquilinos</h5>
+                    </div>
+                    
+                    <form action="/add_boletas" method="post" enctype="multipart/form-data">
+    
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Boleta del departamento</label>
+                            <input class="form-control" type="file" name="boleta_departamento" >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Boleta de emsa</label>
+                            <input class="form-control" type="file" name="boleta_emsa"  >
+                        </div>  
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Boleta de samsa</label>
+                            <input class="form-control" type="file" name="boleta_samsa"  >
+                        </div>
+
+                        <div class="form-group">
+                        
+                        <select class="form-select" id="inlineFormSelectPref" name="departamento" required >
+                            <option selected>Departamento...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                    
+                  
+                    
+
+                    <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                    </div>
+    
+    
+    
+    
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    
+
+{% endblock %}
+
+
+
